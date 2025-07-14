@@ -26,7 +26,7 @@ def registrar_baserow(data: dict) -> str:
     if not token:
         return "❌ Erro: variável de ambiente BASEROW_API_TOKEN não definida."
 
-    url = "https://api.baserow.io/api/database/rows/table/599992/?user_field_names=false"
+    url = "https://api.baserow.io/api/database/rows/table/605355/?user_field_names=false"
 
     payload = {
         "field_4858851": data.get("nome", "Não informado"),
