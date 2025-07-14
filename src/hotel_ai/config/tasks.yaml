@@ -1,0 +1,29 @@
+classify_message_task:
+  agent: message_classifier
+  description: >
+    Analise a mensagem recebida do cliente e classifique seu nível de resolução e o departamento ideal.
+    Retorne também a própria mensagem original.
+    Mensagem:
+    {mensagem_cliente}
+  expected_output: >
+    Um JSON com as chaves "mensagem", "nivel" e "departamento".
+
+dispatch_task:
+  agent: dispatcher
+  description: >
+    Registre a solicitação do cliente na base de dados Baserow usando os dados classificados anteriormente.
+    Retorne os mesmos dados recebidos com um campo adicional "status" contendo o resultado da tentativa de registro.
+  expected_output: >
+    Um JSON contendo as chaves:
+      - "mensagem": a mensagem original do cliente,
+      - "nivel": o nível de complexidade,
+      - "departamento": o departamento identificado,
+      - "status": uma string com o resultado do registro (ex: "✅ Solicitação registrada com sucesso no Baserow.")
+
+
+respond_client_task:
+  agent: response_agent
+  description: >
+    Gere uma resposta cordial ao cliente com base na solicitação registrada, informando que sua demanda foi encaminhada ao setor responsável.
+  expected_output: >
+    Uma resposta pronta para ser enviada ao cliente pelo Telegram.
