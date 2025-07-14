@@ -5,7 +5,7 @@ import os
 @tool("Registrar solicitação no Baserow")
 def registrar_baserow(data: dict) -> str:
     """
-    Registra uma nova solicitação na tabela do Baserow (ID: 599992).
+    Registra uma nova solicitação na tabela do Baserow (ID: 605355).
 
     Espera um dicionário com os seguintes campos:
       - mensagem (str): texto da solicitação do cliente
