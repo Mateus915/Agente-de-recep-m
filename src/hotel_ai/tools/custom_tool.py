@@ -29,11 +29,11 @@ def registrar_baserow(data: dict) -> str:
     url = "https://api.baserow.io/api/database/rows/table/605355/?user_field_names=false"
 
     payload = {
-        "field_4858851": data.get("nome", "Não informado"),
-        "field_4858852": data["mensagem"],
-        "field_4858860": data["nivel"],
-        "field_4858862": data["departamento"],
-        "field_4858863": "Aberto"
+        "field_4910119": data.get("nome", "Não informado"),
+        "field_4910120": data["mensagem"],
+        "field_4910121": data["nivel"],
+        "field_4910123": data["departamento"],
+        "field_4910127": "Aberto"
     }
 
     headers = {
